@@ -3,6 +3,7 @@ package com.example.passingserializableobjects;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -23,10 +24,13 @@ public class SecondActivity extends AppCompatActivity {
         textViewGreeting = findViewById(R.id.textViewGreeting);
         buttonFinish = findViewById(R.id.buttonFinish);
 
-        if (getIntent() != null && getIntent().getExtras() != null && getIntent().hasExtra(MainActivity.USERS_KEY)){
-            ArrayList<User> users = (ArrayList<User>)getIntent().getSerializableExtra(MainActivity.USERS_KEY);
-            Collections.shuffle(users);
-            User user =  users.get(0);
+        if (getIntent() != null && getIntent().getExtras() != null && getIntent().hasExtra(MainActivity.USER_KEY)){
+
+            User user = getIntent().getParcelableExtra(MainActivity.USER_KEY);
+
+            //ArrayList<User> users = (ArrayList<User>)getIntent().getSerializableExtra(MainActivity.USERS_KEY);
+            //Collections.shuffle(users);
+            //User user =  users.get(0);
             //Below statement is for a single user to be passed.
             // User user = (User) getIntent().getSerializableExtra(MainActivity.USER_KEY);
             textViewGreeting.setText("Hello "+user.name);
@@ -41,7 +45,12 @@ public class SecondActivity extends AppCompatActivity {
         }
 
 
-
+    buttonFinish.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            finish();
+        }
+    });
 
     }
 }

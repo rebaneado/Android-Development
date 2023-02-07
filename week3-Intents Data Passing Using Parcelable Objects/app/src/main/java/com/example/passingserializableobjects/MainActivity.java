@@ -24,15 +24,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 //below is for sending a individual user
-               // intent.putExtra(USER_KEY, new User("Bobby Smurta",27));
-
-                ArrayList<User> users = new ArrayList<>();
-
-                users.add(new User("bob",42));
-                users.add(new User("Billy Bob", 31));
-                intent.putExtra(USERS_KEY,users);
-
-
+                intent.putExtra(USER_KEY, new User("Bobby J Smurtaaaa",27));
 
 
                 startActivity(intent);
