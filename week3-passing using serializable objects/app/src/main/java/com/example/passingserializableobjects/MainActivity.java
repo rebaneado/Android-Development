@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     final String TAG = "demo";
     final static public String NAME_KEY = "NAME";
     final static public String USER_KEY = "USER";
+    final static public String USERS_KEY = "USERS";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +23,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-
-                intent.putExtra(USER_KEY, new User("Bobby Smurta",27));
+                //below is for sending a individual user
+               // intent.putExtra(USER_KEY, new User("Bobby Smurta",27));
 
                 ArrayList<User> users = new ArrayList<>();
+
+                users.add(new User("bob",42));
+                users.add(new User("Billy Bob", 31));
+                intent.putExtra(USERS_KEY,users);
+
+
+
+
                 startActivity(intent);
             }
         });
