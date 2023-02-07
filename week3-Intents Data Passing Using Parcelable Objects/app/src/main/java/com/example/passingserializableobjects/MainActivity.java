@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                //below is for sending a individual user4
+                //below is for sending a individual user
                // intent.putExtra(USER_KEY, new User("Bobby Smurta",27));
 
                 ArrayList<User> users = new ArrayList<>();
