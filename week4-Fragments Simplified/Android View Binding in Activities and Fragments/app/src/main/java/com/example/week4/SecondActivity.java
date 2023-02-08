@@ -1,12 +1,12 @@
 package com.example.week4;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
-public class SecondActivity extends AppCompatActivity implements SecondFragment.SecondFragmentListener {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SecondActivity extends AppCompatActivity implements SecondFragment.SecondFragmentListener, SettingsFragment.SettingsListener {
+
     final String TAG = "demo";
 
     @Override
@@ -29,5 +29,10 @@ public class SecondActivity extends AppCompatActivity implements SecondFragment.
     public void goToSettings() {
         getSupportFragmentManager().beginTransaction().replace(R.id.constraintView, new SettingsFragment()).addToBackStack(null).commit();
 
+    }
+
+    @Override
+    public void gobackToSecondFragment() {
+        getSupportFragmentManager().popBackStack();
     }
 }
