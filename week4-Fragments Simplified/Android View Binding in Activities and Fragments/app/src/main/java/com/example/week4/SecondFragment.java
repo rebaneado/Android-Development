@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,19 +16,17 @@ import com.example.week4.databinding.FragmentSecondBinding;
 
 
 public class SecondFragment extends Fragment {
-
+    final String TAG = "demo";
     public SecondFragment() {
         // Required empty public constructor
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "On Create second Fragment");
     }
 
     FragmentSecondBinding binding;
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
