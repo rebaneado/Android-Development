@@ -45,8 +45,22 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 String typed = binding.editTextTextPersonName.getText().toString();
                 binding.buttonSubmit.setText(typed);
+                sListener.sendUserName(typed);
+
 
             }
         });
+    }
+
+    SecondFragmentListener sListener;
+    @Override
+    public void onAttach(@NonNull Context context) {// the context is your activity
+        super.onAttach(context);
+        sListener = (SecondFragmentListener) context;
+    }
+
+    //implement interface fragment
+    public  interface SecondFragmentListener{
+        void sendUserName(String username);
     }
 }
