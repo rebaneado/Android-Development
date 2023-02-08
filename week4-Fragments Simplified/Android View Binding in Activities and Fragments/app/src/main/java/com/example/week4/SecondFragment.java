@@ -47,7 +47,14 @@ public class SecondFragment extends Fragment {
                 binding.buttonSubmit.setText(typed);
                 sListener.sendUserName(typed);
 
+            }
+        });
 
+
+        binding.buttonGoToSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sListener.goToSettings();
             }
         });
     }
@@ -62,5 +69,6 @@ public class SecondFragment extends Fragment {
     //implement interface fragment
     public  interface SecondFragmentListener{
         void sendUserName(String username);
+        void goToSettings();
     }
 }

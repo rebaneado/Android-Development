@@ -13,9 +13,7 @@ public class SecondActivity extends AppCompatActivity implements SecondFragment.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-
         getSupportFragmentManager().beginTransaction().add(R.id.constraintView, new SecondFragment()).commit();
-
 
     }
 
@@ -24,6 +22,12 @@ public class SecondActivity extends AppCompatActivity implements SecondFragment.
         //i think this is wrong
         //Toast.makeText(SecondActivity.this, "this is toast", Toast.LENGTH_LONG);
         Log.d(TAG, "Send UserName" + username);
+
+    }
+
+    @Override
+    public void goToSettings() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.constraintView, new SettingsFragment()).addToBackStack(null).commit();
 
     }
 }
