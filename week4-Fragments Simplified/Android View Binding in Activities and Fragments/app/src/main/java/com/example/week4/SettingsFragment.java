@@ -38,13 +38,13 @@ public class SettingsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Settings Fragment");
+
         binding.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mListener.gobackToSecondFragment();
             }
         });
-
 
     }
     SettingsListener mListener;
